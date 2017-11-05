@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project_eae;
+
 
 /**
  *
- * @author malcolmx
+ * @author ASAZING 
  */
 public class ventana extends javax.swing.JFrame {
 
@@ -30,24 +26,51 @@ public class ventana extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        NomPro = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        canP = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        totaltoto = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        valor = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        valortotal = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        userl = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        canven = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel2.setText("Cliente :");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(12, 64, 59, 15);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(149, 62, 133, 19);
 
-        jLabel1.setText("Producto :");
+        jLabel1.setText("Nom. Producto :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(12, 109, 113, 15);
 
-        jLabel3.setText("Cantidad P :");
+        NomPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomProActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NomPro);
+        NomPro.setBounds(149, 107, 133, 19);
+
+        jLabel3.setText("Cantidad");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(12, 150, 64, 15);
+        getContentPane().add(canP);
+        canP.setBounds(149, 148, 133, 19);
 
         jButton1.setText("Vender");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,118 +78,123 @@ public class ventana extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(401, 385, 85, 25);
 
         jLabel4.setText("Total en ventas : $");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(12, 395, 131, 15);
 
-        jLabel5.setText("0");
+        totaltoto.setText("0");
+        getContentPane().add(totaltoto);
+        totaltoto.setBounds(162, 395, 114, 15);
 
         jButton2.setText("Limpiar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(525, 348, 86, 25);
 
-        jLabel6.setText("Valor del pro :");
+        jLabel6.setText("Valor");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(12, 180, 37, 15);
+        getContentPane().add(valor);
+        valor.setBounds(149, 178, 133, 19);
 
         jButton3.setText("Ver ventas");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(501, 385, 110, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel2)
-                .addGap(59, 59, 59)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel1)
-                .addGap(45, 45, 45)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3)
-                .addGap(32, 32, 32)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(521, 521, 521)
-                .addComponent(jButton2))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126)
-                .addComponent(jButton1)
-                .addGap(15, 15, 15)
-                .addComponent(jButton3))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel2))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel1))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel3))
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel6))
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(177, 177, 177)
-                .addComponent(jButton2)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)))))
-        );
+        jLabel7.setText("Valor a pagar : $");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(20, 260, 117, 15);
+
+        valortotal.setText("0");
+        getContentPane().add(valortotal);
+        valortotal.setBounds(149, 260, 133, 15);
+
+        jLabel5.setText("Usuario :");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(449, 12, 64, 15);
+        getContentPane().add(userl);
+        userl.setBounds(519, 12, 84, 15);
+
+        jLabel8.setText("Cant de productos vendidos :");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(12, 374, 208, 15);
+
+        canven.setText("0");
+        getContentPane().add(canven);
+        canven.setBounds(226, 374, 150, 15);
+
+        jButton4.setText("Registrar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(290, 60, 110, 20);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(0, 0, 630, 420);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    regi.captureImp();
+    shell.vender();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void NomProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomProActionPerformed
+    }//GEN-LAST:event_NomProActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        clear.clean();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTextField NomPro;
+    public static javax.swing.JTextField canP;
+    public static javax.swing.JLabel canven;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JLabel totaltoto;
+    public static javax.swing.JLabel userl;
+    public static javax.swing.JTextField valor;
+    public static javax.swing.JLabel valortotal;
     // End of variables declaration//GEN-END:variables
-    public static data capt=new data();
+    public static data clear=new data();
     public static data regi=new data();
+    public static data shell=new data ();
+    public static data seeshell=new data ();
 }
 
