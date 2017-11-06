@@ -113,22 +113,19 @@ public class login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+    }
 
-    private void contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraActionPerformed
-    }//GEN-LAST:event_contraActionPerformed
+    private void contraActionPerformed(java.awt.event.ActionEvent evt) {
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         capt.capture();
-        login logeo=new login ();
-        logeo.setVisible(false);
-        ventana win=new ventana();
-        win.setVisible(true);
-        win.setTitle("Registros");
-        win.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        setVisible(false);
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -143,3 +140,4 @@ public class login extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 public static data capt=new data();
 }
+

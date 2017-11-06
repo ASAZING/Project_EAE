@@ -1,5 +1,7 @@
 package project_eae;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -24,7 +26,7 @@ public class ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cliente = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         NomPro = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -38,39 +40,44 @@ public class ventana extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         valortotal = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        userl = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         canven = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        user = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Cliente :");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(12, 64, 59, 15);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(149, 62, 133, 19);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 64, -1, -1));
+
+        cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 62, 133, -1));
 
         jLabel1.setText("Nom. Producto :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(12, 109, 113, 15);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 109, -1, -1));
 
         NomPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomProActionPerformed(evt);
             }
         });
-        getContentPane().add(NomPro);
-        NomPro.setBounds(149, 107, 133, 19);
+        getContentPane().add(NomPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 107, 133, -1));
 
-        jLabel3.setText("Cantidad");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(12, 150, 64, 15);
-        getContentPane().add(canP);
-        canP.setBounds(149, 148, 133, 19);
+        jLabel3.setText("Cantidad :");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 133, -1));
 
         jButton1.setText("Vender");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,16 +85,13 @@ public class ventana extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(401, 385, 85, 25);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
 
         jLabel4.setText("Total en ventas : $");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(12, 395, 131, 15);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 395, -1, -1));
 
         totaltoto.setText("0");
-        getContentPane().add(totaltoto);
-        totaltoto.setBounds(162, 395, 114, 15);
+        getContentPane().add(totaltoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 395, 114, -1));
 
         jButton2.setText("Limpiar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -95,14 +99,11 @@ public class ventana extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(525, 348, 86, 25);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 348, -1, -1));
 
-        jLabel6.setText("Valor");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(12, 180, 37, 15);
-        getContentPane().add(valor);
-        valor.setBounds(149, 178, 133, 19);
+        jLabel6.setText("Val del producto :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 133, -1));
 
         jButton3.setText("Ver ventas");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -110,30 +111,19 @@ public class ventana extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(501, 385, 110, 25);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 385, -1, -1));
 
         jLabel7.setText("Valor a pagar : $");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(20, 260, 117, 15);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
         valortotal.setText("0");
-        getContentPane().add(valortotal);
-        valortotal.setBounds(149, 260, 133, 15);
-
-        jLabel5.setText("Usuario :");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(449, 12, 64, 15);
-        getContentPane().add(userl);
-        userl.setBounds(519, 12, 84, 15);
+        getContentPane().add(valortotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 260, 133, -1));
 
         jLabel8.setText("Cant de productos vendidos :");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(12, 374, 208, 15);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 374, -1, -1));
 
         canven.setText("0");
-        getContentPane().add(canven);
-        canven.setBounds(226, 374, 150, 15);
+        getContentPane().add(canven, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 374, 150, -1));
 
         jButton4.setText("Registrar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -141,12 +131,47 @@ public class ventana extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(290, 60, 110, 20);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 110, 20));
+
+        jLabel5.setText("Usuario :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 20));
+        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 130, 20));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 0, 630, 420);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
+
+        jMenu1.setText("Perfil");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Iniciar sesion");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu3.setText("Ayuda");
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("¿Como uasr del programa ?");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -166,13 +191,35 @@ public class ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    regis.registrar();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clienteActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        login log=new login ();
+        log.setVisible(true);
+        log.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    helpme me=new helpme ();
+    me.setVisible(true);
+    me.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField NomPro;
     public static javax.swing.JTextField canP;
     public static javax.swing.JLabel canven;
+    public static javax.swing.JTextField cliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -186,9 +233,13 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    public static javax.swing.JTextField jTextField1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     public static javax.swing.JLabel totaltoto;
-    public static javax.swing.JLabel userl;
+    public static javax.swing.JLabel user;
     public static javax.swing.JTextField valor;
     public static javax.swing.JLabel valortotal;
     // End of variables declaration//GEN-END:variables
@@ -196,5 +247,6 @@ public class ventana extends javax.swing.JFrame {
     public static data regi=new data();
     public static data shell=new data ();
     public static data seeshell=new data ();
+    public static data regis=new data();
+   
 }
-

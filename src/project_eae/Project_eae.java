@@ -6,10 +6,10 @@ package project_eae;
  */
 public class Project_eae {
     public static void main(String[] args) {
-        login logeo=new login ();
-        logeo.setVisible(true);
-        logeo.setTitle("Inicio de secion");
-        logeo.setLocationRelativeTo(null);
+        ventana win=new ventana ();
+        win.setVisible(true);
+        win.setTitle("Inicio de secion");
+        win.setLocationRelativeTo(null);
         
         
     }

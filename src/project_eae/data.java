@@ -33,13 +33,12 @@ public class data {
      cadena.add(user= login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
      cadena.add(pass= login.contra.getText()); //almacena la contraceña en el arrayList (String)
          JOptionPane.showMessageDialog(null, "Bienvenido "+ cadena.get(0)); // con cadena.get(0) optengo el primer dato  
-                                                                            // que es el nombre de usario y asi lo puedo mandar a imprimir 
-        
-}
-     
+     ventana.user.setText(cadena.get(0));
+
+     }
      public void clean (){   // Limpia los valores ya agregados  
      ventana.canP.setText("");  
-     ventana.jTextField1.setText("");
+     ventana.cliente.setText("");
      ventana.NomPro.setText("");
      ventana.valor.setText("");
      ventana.valortotal.setText("0");
@@ -48,22 +47,36 @@ public class data {
      // Captura  e Imprime ventas y numero de ventas
      public void vender (){
          can=Integer.parseInt(ventana.canP.getText());
+         cadena.add(cliente= ventana.cliente.getText());
          shell.add(val_produt=Double.parseDouble(ventana.valor.getText())); //En este almaceno el valor del producto 
                                                                           // con un ArrayLIst (Double)
          val_total=can*val_produt;
         String result = String.valueOf((val_total));
         ventana.valortotal.setText(result);
          
-         double sumatoria=0;
+         float sumatoria=0;
          m++; // cada vez qeu use (vender) va incrementar el numeor de las ventas 1 en 1 
-        for (Double shell1 : shell) {
+         for (int i = 0; i < shell.size(); i++) {
             // Este arrgle hace la sumatoria de todas la ventas
-            sumatoria=sumatoria+val_total;
+            sumatoria=(float) (sumatoria+shell.get(i));
         }
         
         String nv = String.valueOf(m);
         ventana.canven.setText(nv);
-        String total = String.valueOf((sumatoria)); // Convientor el valor de la umatoria a string 
-        ventana.totaltoto.setText(total);           // para poder imprimirlo en un label 
+        String total = String.valueOf((sumatoria)); // Convientor el valor de la Sumatoria a String 
+        ventana.totaltoto.setText(total);           // para poder imprimirlo en un Jlabel 
      } 
+     
+     public void registrar () {
+         
+           cadena.add(JOptionPane.showInputDialog("Ingrese su Nombre")); // cadena.get(0)
+           cadena.add(String.valueOf((String)JOptionPane.showInputDialog("Ingrese Numero de CC")));// cadena.get(1)
+           cadena.add(String.valueOf((String)JOptionPane.showInputDialog("Ingrese N.telefonico")));// cadena.get(2)
+           
+           ventana.cliente.setText(cadena.get(1));
+           // Estos datos se envian a el servidor donde seguardan los datos de los cliente 
+         }
+  
+       
 }
+
