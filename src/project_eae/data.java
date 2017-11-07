@@ -16,7 +16,9 @@ import javax.swing.JOptionPane;
  */
 public class data {
     ArrayList<String> cadena=new ArrayList(); //Almacena datos en cadena (String)
-    ArrayList<Double> shell=new ArrayList(); // Alamcena Nuemors flotantes 
+    ArrayList<Double> shell=new ArrayList(); // Alamcena Nuemors Reales
+    ArrayList<Double> total=new ArrayList(); // Alamcena Nuemors Float
+    ArrayList<data> operaciones;
     Date now = new Date(System.currentTimeMillis()); // Añade calendario con hora y fecha
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd"); // Añade fecha  
     SimpleDateFormat hour = new SimpleDateFormat("HH:mm:ss"); // Añade la hora
@@ -24,14 +26,14 @@ public class data {
     public data (){
 }
     String user="",pass="",cliente="",nprodut=""; 
-    Integer can;
+    double can;
     double val_produt, val_total=0;
     int m=0;
     
     // Almacena los datos del usuario que va a iniciar sesion 
      public void capture(){ 
-     cadena.add(user= login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
-     cadena.add(pass= login.contra.getText()); //almacena la contraceña en el arrayList (String)
+     cadena.add(login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
+     cadena.add(login.contra.getText()); //almacena la contraceña en el arrayList (String)
          JOptionPane.showMessageDialog(null, "Bienvenido "+ cadena.get(0)); // con cadena.get(0) optengo el primer dato  
      ventana.user.setText(cadena.get(0));
 
@@ -46,19 +48,19 @@ public class data {
      }
      // Captura  e Imprime ventas y numero de ventas
      public void vender (){
-         can=Integer.parseInt(ventana.canP.getText());
-         cadena.add(cliente= ventana.cliente.getText());
+         cadena.add(ventana.cliente.getText());
+         can = Double.parseDouble(ventana.canP.getText());
          shell.add(val_produt=Double.parseDouble(ventana.valor.getText())); //En este almaceno el valor del producto 
-                                                                          // con un ArrayLIst (Double)
-         val_total=can*val_produt;
-        String result = String.valueOf((val_total));
+                                                                 // con un ArrayLIst (Double)
+         total.add(val_produt*can);
+         String result = String.valueOf(val_produt*can);
         ventana.valortotal.setText(result);
          
          float sumatoria=0;
          m++; // cada vez qeu use (vender) va incrementar el numeor de las ventas 1 en 1 
-         for (int i = 0; i < shell.size(); i++) {
+         for (int i = 0; i < total.size(); i++) {
             // Este arrgle hace la sumatoria de todas la ventas
-            sumatoria=(float) (sumatoria+shell.get(i));
+            sumatoria=(float) (sumatoria+total.get(i));
         }
         
         String nv = String.valueOf(m);

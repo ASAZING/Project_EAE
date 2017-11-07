@@ -124,6 +124,7 @@ public class login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         capt.capture();
         setVisible(false);
+        setTitle("Inicio de sesion");
         
     }
 
