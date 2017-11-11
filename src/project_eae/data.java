@@ -19,15 +19,25 @@ public class data {
     public data (){
 }
     int can;
-    float val_produt=2;
+    String user="",pass="";
+    float val_produt=0;
     int m=0;
-    
     // Almacena los datos del usuario que va a iniciar sesion 
      public void capture(){ 
-     cadena.add(login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
-     cadena.add(login.contra.getText()); //almacena la contraceña en el arrayList (String)
-         JOptionPane.showMessageDialog(null, "Bienvenido "+ cadena.get(0)); // con cadena.get(0) optengo el primer dato  
-     ventana.user.setText(cadena.get(0));
+     cadena.add(user =login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
+     cadena.add(pass=login.contra.getText()); //almacena la contraceña en el arrayList (String)
+         
+         if (pass.equals("holis12") && user.equals("malcolm")) {
+             ventana.user.setText(cadena.get(0));
+             JOptionPane.showMessageDialog(null, "Bienvenido "+ cadena.get(0)); // con cadena.get(0) optengo el primer dato 
+         } else {
+             login log=new login();
+             log.setVisible(true);
+             log.setTitle("Inicio de Sesion");
+             log.setLocationRelativeTo(null);
+             JOptionPane.showMessageDialog(null, "Error de Usuario"); // error de usario 
+         }
+     
 
      }
      public void clean (){   // Limpia los valores ya agregados  
@@ -44,6 +54,11 @@ public class data {
          if (ventana.Pro.getSelectedItem().equals("Monitor")) {
             val_produt=100000;
         }else{
+             if (ventana.Pro.getSelectedItem().equals("i3")) {
+              val_produt=500000;
+             }else{
+                 
+             }
         }
         
          total.add(val_produt*can);
@@ -82,7 +97,13 @@ public class data {
              ventana.valor.setText(val_pro);
              
          } else {
-             JOptionPane.showInputDialog(null,"hoala");
+             if (ventana.Pro.getSelectedItem().equals("i3")) {
+                 String val_pro= String.valueOf("500000");
+                 ventana.valor.setText(val_pro);
+                 
+             } else {
+                 
+             }
          }
      
      }
