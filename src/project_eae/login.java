@@ -5,6 +5,7 @@ package project_eae;
  * @author ASAZING
  */
 public class login extends javax.swing.JFrame {
+    public static data capt=new data();
 
     /**
      * Creates new form login
@@ -58,7 +59,7 @@ public class login extends javax.swing.JFrame {
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("        Empresa XYZ");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/fondo-ubuntu-trusty-1-690x431.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/login.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,8 +115,7 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        System.exit(0);
-        
+        setVisible(false);
     }
 
     private void contraActionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +139,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     public static javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
-public static data capt=new data();
+
 }
 

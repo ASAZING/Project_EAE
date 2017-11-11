@@ -5,9 +5,7 @@
  */
 package project_eae;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,18 +14,12 @@ import javax.swing.JOptionPane;
  */
 public class data {
     ArrayList<String> cadena=new ArrayList(); //Almacena datos en cadena (String)
-    ArrayList<Double> shell=new ArrayList(); // Alamcena Nuemors Reales
-    ArrayList<Double> total=new ArrayList(); // Alamcena Nuemors Float
-    ArrayList<data> operaciones;
-    Date now = new Date(System.currentTimeMillis()); // Añade calendario con hora y fecha
-    SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd"); // Añade fecha  
-    SimpleDateFormat hour = new SimpleDateFormat("HH:mm:ss"); // Añade la hora
+    ArrayList<Float> total=new ArrayList(); // Alamcena Nuemors Flotantes
     
     public data (){
 }
-    String user="",pass="",cliente="",nprodut=""; 
-    double can;
-    double val_produt, val_total=0;
+    int can;
+    float val_produt;
     int m=0;
     
     // Almacena los datos del usuario que va a iniciar sesion 
@@ -49,9 +41,9 @@ public class data {
      // Captura  e Imprime ventas y numero de ventas
      public void vender (){
          cadena.add(ventana.cliente.getText());
-         can = Double.parseDouble(ventana.canP.getText());
-         shell.add(val_produt=Double.parseDouble(ventana.valor.getText())); //En este almaceno el valor del producto 
-                                                                 // con un ArrayLIst (Double)
+         can = Integer.parseInt(ventana.canP.getText());
+         val_produt=Float.parseFloat(ventana.valor.getText()); //En este almaceno el valor del producto 
+                                                               // con un ArrayLIst (Float)
          total.add(val_produt*can);
          String result = String.valueOf(val_produt*can);
         ventana.valortotal.setText(result);
@@ -59,14 +51,15 @@ public class data {
          float sumatoria=0;
          m++; // cada vez qeu use (vender) va incrementar el numeor de las ventas 1 en 1 
          for (int i = 0; i < total.size(); i++) {
-            // Este arrgle hace la sumatoria de todas la ventas
-            sumatoria=(float) (sumatoria+total.get(i));
+            // Este arrglo hace la sumatoria de todas la ventas
+            sumatoria= sumatoria+total.get(i);
         }
         
         String nv = String.valueOf(m);
         ventana.canven.setText(nv);
-        String total = String.valueOf((sumatoria)); // Convientor el valor de la Sumatoria a String 
-        ventana.totaltoto.setText(total);           // para poder imprimirlo en un Jlabel 
+        String totalS = String.valueOf((sumatoria)); // Convientor el valor de la Sumatoria a String 
+        ventana.totaltoto.setText(totalS);           // para poder imprimirlo en un Jlabel 
+
      } 
      
      public void registrar () {
@@ -78,7 +71,5 @@ public class data {
            ventana.cliente.setText(cadena.get(1));
            // Estos datos se envian a el servidor donde seguardan los datos de los cliente 
          }
-  
-       
-}
 
+}
