@@ -11,6 +11,7 @@ public class ventana extends javax.swing.JFrame {
     public static data regi=new data(); 
     public static data shell=new data ();
     public static data regis=new data();
+    public static data pro=new data();
 
     /**
      * Creates new form ventana
@@ -30,7 +31,6 @@ public class ventana extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cliente = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        NomPro = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         canP = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -38,7 +38,6 @@ public class ventana extends javax.swing.JFrame {
         totaltoto = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        valor = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         valortotal = new javax.swing.JLabel();
@@ -47,6 +46,8 @@ public class ventana extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
+        Pro = new javax.swing.JComboBox<>();
+        valor = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -72,16 +73,9 @@ public class ventana extends javax.swing.JFrame {
         jLabel1.setText("Producto :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
-        NomPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomProActionPerformed(evt);
-            }
-        });
-        getContentPane().add(NomPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 133, -1));
-
         jLabel3.setText("Cantidad :");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
-        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 133, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 133, -1));
 
         jButton1.setText("Vender");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -105,9 +99,8 @@ public class ventana extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 348, -1, -1));
 
-        jLabel6.setText("Val del producto :");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
-        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 133, -1));
+        jLabel6.setText("$");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 20, 20));
 
         jButton3.setText("Ver ventas");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +133,22 @@ public class ventana extends javax.swing.JFrame {
         jLabel5.setText("Usuario :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 20));
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 130, 20));
+
+        Pro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sleccione un producto", "i3", "i5", "i7", "Monitor", "Mother board ", "Mouse", "Teclado", "Parlantes" }));
+        Pro.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                ProComponentHidden(evt);
+            }
+        });
+        Pro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 130, -1));
+
+        valor.setText("0");
+        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 120, 20));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
@@ -200,9 +209,6 @@ public class ventana extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void NomProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomProActionPerformed
-    }//GEN-LAST:event_NomProActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     clear.clean();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -237,9 +243,17 @@ public class ventana extends javax.swing.JFrame {
     System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void ProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProActionPerformed
+    pro.produc();
+    }//GEN-LAST:event_ProActionPerformed
+
+    private void ProComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ProComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProComponentHidden
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextField NomPro;
+    public static javax.swing.JComboBox<String> Pro;
     public static javax.swing.JTextField canP;
     public static javax.swing.JLabel canven;
     public static javax.swing.JTextField cliente;
@@ -265,7 +279,7 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     public static javax.swing.JLabel totaltoto;
     public static javax.swing.JLabel user;
-    public static javax.swing.JTextField valor;
+    public static javax.swing.JLabel valor;
     public static javax.swing.JLabel valortotal;
     // End of variables declaration//GEN-END:variables
    

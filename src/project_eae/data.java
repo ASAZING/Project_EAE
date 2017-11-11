@@ -19,7 +19,7 @@ public class data {
     public data (){
 }
     int can;
-    float val_produt;
+    float val_produt=2;
     int m=0;
     
     // Almacena los datos del usuario que va a iniciar sesion 
@@ -33,8 +33,7 @@ public class data {
      public void clean (){   // Limpia los valores ya agregados  
      ventana.canP.setText("");  
      ventana.cliente.setText("");
-     ventana.NomPro.setText("");
-     ventana.valor.setText("");
+     ventana.valor.setText("0");
      ventana.valortotal.setText("0");
 
      }
@@ -42,11 +41,15 @@ public class data {
      public void vender (){
          cadena.add(ventana.cliente.getText());
          can = Integer.parseInt(ventana.canP.getText());
-         val_produt=Float.parseFloat(ventana.valor.getText()); //En este almaceno el valor del producto 
-                                                               // con un ArrayLIst (Float)
+         if (ventana.Pro.getSelectedItem().equals("Monitor")) {
+            val_produt=100000;
+        }else{
+        }
+        
          total.add(val_produt*can);
          String result = String.valueOf(val_produt*can);
         ventana.valortotal.setText(result);
+        
          
          float sumatoria=0;
          m++; // cada vez qeu use (vender) va incrementar el numeor de las ventas 1 en 1 
@@ -71,5 +74,17 @@ public class data {
            ventana.cliente.setText(cadena.get(1));
            // Estos datos se envian a el servidor donde seguardan los datos de los cliente 
          }
+     public void produc (){
+         String nomp="";
+         nomp=ventana.Pro.getSelectedItem().toString();
+         if (ventana.Pro.getSelectedItem().equals("Monitor")) {
+             String val_pro= String.valueOf("100000");
+             ventana.valor.setText(val_pro);
+             
+         } else {
+             JOptionPane.showInputDialog(null,"hoala");
+         }
+     
+     }
 
 }
