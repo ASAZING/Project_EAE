@@ -47,6 +47,7 @@ public class ventana extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         Pro = new javax.swing.JComboBox<>();
+        jButton5 = new javax.swing.JButton();
         valor = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -134,7 +135,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 20));
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 130, 20));
 
-        Pro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sleccione un producto", "i3", "i5", "i7", "Monitor", "Mother board ", "Mouse", "Teclado", "Parlantes" }));
+        Pro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sleccione un producto", "i3", "i5", "i7", "Monitor", "Mother board", "Mouse", "Teclado", "Parlantes" }));
         Pro.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 ProComponentHidden(evt);
@@ -146,6 +147,14 @@ public class ventana extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 130, -1));
+
+        jButton5.setText("Agregar al carrito");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         valor.setText("0");
         getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 120, 20));
@@ -251,6 +260,10 @@ public class ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ProComponentHidden
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JComboBox<String> Pro;
@@ -261,6 +274,7 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

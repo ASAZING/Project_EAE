@@ -27,7 +27,7 @@ public class data {
      cadena.add(user =login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
      cadena.add(pass=login.contra.getText()); //almacena la contraceña en el arrayList (String)
          
-         if (pass.equals("holis12") && user.equals("malcolm")) {
+         if (pass.equals("holis123") && user.equals("malcolm")) {
              ventana.user.setText(cadena.get(0));
              JOptionPane.showMessageDialog(null, "Bienvenido "+ cadena.get(0)); // con cadena.get(0) optengo el primer dato 
          } else {
@@ -57,10 +57,40 @@ public class data {
              if (ventana.Pro.getSelectedItem().equals("i3")) {
               val_produt=500000;
              }else{
-                 
-             }
-        }
-        
+                 if (ventana.Pro.getSelectedItem().equals("i5")) {
+                  val_produt=800000;
+             }else{
+                     if (ventana.Pro.getSelectedItem().equals("i7")) {
+                      val_produt=1000000;
+                     } else {
+                         if (ventana.Pro.getSelectedItem().equals("i7")) {
+                          val_produt=1000000;
+                   }else{
+                       if (ventana.Pro.getSelectedItem().equals("Mother board")) {
+                        val_produt=700000;
+                       } else {
+                           if (ventana.Pro.getSelectedItem().equals("Mouse")) {
+                            val_produt=200000;
+                           } else {
+                               if (ventana.Pro.getSelectedItem().equals("Teclado")) {
+                                val_produt=300000;
+                               } else {
+                                   if (ventana.Pro.getSelectedItem().equals("Parlantes")) {
+                                    val_produt=500000;
+                                       
+                                   } else {
+                                       JOptionPane.showMessageDialog(null, "Porfavor selecione un producto");
+                                       
+                                   }
+         }
+        } 
+       } 
+      } 
+     }
+    } 
+   } 
+  }                     
+                                    
          total.add(val_produt*can);
          String result = String.valueOf(val_produt*can);
         ventana.valortotal.setText(result);
@@ -78,8 +108,7 @@ public class data {
         String totalS = String.valueOf((sumatoria)); // Convientor el valor de la Sumatoria a String 
         ventana.totaltoto.setText(totalS);           // para poder imprimirlo en un Jlabel 
 
-     } 
-     
+     }
      public void registrar () {
          
            cadena.add(JOptionPane.showInputDialog("Ingrese su Nombre")); // cadena.get(0)
@@ -102,6 +131,41 @@ public class data {
                  ventana.valor.setText(val_pro);
                  
              } else {
+                 if (ventana.Pro.getSelectedItem().equals("i5")) {
+                 String val_pro= String.valueOf("800000");
+                 ventana.valor.setText(val_pro);
+                     
+                 } else {
+                   if (ventana.Pro.getSelectedItem().equals("i7")) {
+                   String val_pro= String.valueOf("1000000");
+                   ventana.valor.setText(val_pro);
+                   }else{
+                       if (ventana.Pro.getSelectedItem().equals("Mother board")) {
+                       String val_pro= String.valueOf("700000");
+                       ventana.valor.setText(val_pro);
+                           
+                       } else {
+                           if (ventana.Pro.getSelectedItem().equals("Mouse")) {
+                           String val_pro= String.valueOf("200000");
+                           ventana.valor.setText(val_pro);
+                           } else {
+                               if (ventana.Pro.getSelectedItem().equals("Teclado")) {
+                               String val_pro= String.valueOf("300000");
+                               ventana.valor.setText(val_pro);
+                               } else {
+                                   if (ventana.Pro.getSelectedItem().equals("Parlantes")) {
+                                   String val_pro= String.valueOf("500000");
+                                   ventana.valor.setText(val_pro);
+                                       
+                                   } else {
+                                       JOptionPane.showMessageDialog(null, "Porfavor selecione un producto");
+                                   }
+                               }
+                           }
+                       }
+                       
+                   }
+                 }
                  
              }
          }
