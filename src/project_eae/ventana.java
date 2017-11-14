@@ -1,5 +1,8 @@
 package project_eae;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 
 /**
@@ -38,7 +41,6 @@ public class ventana extends javax.swing.JFrame {
         totaltoto = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         valortotal = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -49,6 +51,8 @@ public class ventana extends javax.swing.JFrame {
         Pro = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
         valor = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbProductos = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -79,18 +83,19 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 133, -1));
 
         jButton1.setText("Vender");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
 
         jLabel4.setText("Total en ventas : $");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 395, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
 
         totaltoto.setText("0");
-        getContentPane().add(totaltoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 395, 114, -1));
+        getContentPane().add(totaltoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 114, -1));
 
         jButton2.setText("Limpiar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -98,30 +103,22 @@ public class ventana extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 348, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
 
         jLabel6.setText("$");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 20, 20));
 
-        jButton3.setText("Ver ventas");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 385, -1, -1));
-
         jLabel7.setText("Valor a pagar : $");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
         valortotal.setText("0");
-        getContentPane().add(valortotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 260, 133, -1));
+        getContentPane().add(valortotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 133, -1));
 
         jLabel8.setText("Numero de ventas :");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 369, -1, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, 20));
 
         canven.setText("0");
-        getContentPane().add(canven, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 150, 20));
+        getContentPane().add(canven, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 150, 20));
 
         jButton4.setText("Registrar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -154,13 +151,33 @@ public class ventana extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
         valor.setText("0");
         getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 120, 20));
 
+        tbProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Producto", "Precio unitario", "Cantidad", "Subtotal", "Cliente", "Usuario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tbProductos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 540, 140));
+
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 530));
 
         jMenu2.setText("Inicio");
 
@@ -212,11 +229,8 @@ public class ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    shell.vender();
+        shell.vender();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     clear.clean();
@@ -262,6 +276,28 @@ public class ventana extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
+        /*Agrega a la tabla*/
+        DefaultTableModel modelo;
+        modelo = (DefaultTableModel)tbProductos.getModel();
+        int cant = Integer.parseInt(canP.getText());
+        float precio = Float.parseFloat(valor.getText());
+        float subtot = precio * cant ;
+        Object[] value = {Pro.getSelectedItem().toString(),valor.getText(),canP.getText(), subtot,cliente.getText(), user.getText()};
+        modelo.addRow(value);
+        tbProductos.setModel(modelo);
+
+        /* funcion para recorrer tabla */
+        float suma = 0;
+        for(int i = 0; i<modelo.getRowCount(); i++){
+           
+            String str = modelo.getValueAt(i, 3).toString();
+            suma += subtot;
+             JOptionPane.showMessageDialog(null, "Suma :"+suma);
+        }
+        String S =String.valueOf(suma);
+        valortotal.setText(S);
+        
+       
     }//GEN-LAST:event_jButton5ActionPerformed
 
 
@@ -270,9 +306,8 @@ public class ventana extends javax.swing.JFrame {
     public static javax.swing.JTextField canP;
     public static javax.swing.JLabel canven;
     public static javax.swing.JTextField cliente;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -291,6 +326,8 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbProductos;
     public static javax.swing.JLabel totaltoto;
     public static javax.swing.JLabel user;
     public static javax.swing.JLabel valor;
