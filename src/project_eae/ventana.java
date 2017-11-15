@@ -289,11 +289,8 @@ public class ventana extends javax.swing.JFrame {
         /* funcion para recorrer tabla */
         float suma = 0;
         for(int i = 0; i<modelo.getRowCount(); i++){
-           
-            String str = modelo.getValueAt(i, 3).toString();
-            suma += subtot;
-             JOptionPane.showMessageDialog(null, "Suma :"+suma);
-        }
+            suma += (Float)modelo.getValueAt(i, 3); 
+        }                                         
         String S =String.valueOf(suma);
         valortotal.setText(S);
         
