@@ -57,7 +57,7 @@ public class login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Noto Sans CJK SC Black", 3, 12)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
-        jLabel2.setText("        Empresa XYZ");
+        jLabel2.setText("        CompuTecno");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/login.jpg"))); // NOI18N
 
