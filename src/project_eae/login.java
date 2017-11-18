@@ -1,5 +1,8 @@
 package project_eae;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASAZING
@@ -12,6 +15,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        this.setIconImage(new ImageIcon(getClass().getResource("/resources/logeo.png")).getImage());  
     }
 
     @SuppressWarnings("unchecked")
@@ -59,7 +63,7 @@ public class login extends javax.swing.JFrame {
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("        CompuTecno");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/login.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/login.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,10 +126,19 @@ public class login extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        capt.capture();
-        setVisible(false);
-        setTitle("Inicio de sesion");
         
+        setTitle("Inicio de sesion");
+        try { 
+         if (contra.getText().equals("holis123") && usuario.getText().equals("malcolm") || contra.getText().equals("holis123") && usuario.getText().equals("ASAZING")) {
+             ventana.user.setText(usuario.getText());
+             ventana.jButton5.setEnabled(true);
+             JOptionPane.showMessageDialog(null, "Bienvenido "+ usuario.getText()); 
+             setVisible(false);
+         } else {
+             JOptionPane.showMessageDialog(null, "Error de Usuario"); // error al iniciar sesion 
+         }
+        } catch (Exception e) {
+        }
     }
 
 

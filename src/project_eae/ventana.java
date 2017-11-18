@@ -1,7 +1,8 @@
 package project_eae;
-
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 
 
 
@@ -16,11 +17,15 @@ public class ventana extends javax.swing.JFrame {
     public static data regis=new data();
     public static data pro=new data();
 
+
     /**
      * Creates new form ventana
      */
     public ventana() {
         initComponents();
+  
+           this.setIconImage(new ImageIcon(getClass().getResource("/resources/icono.png")).getImage());   
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,22 +71,23 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Cliente :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 64, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, -1, 30));
 
         cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clienteActionPerformed(evt);
             }
         });
-        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 62, 133, -1));
+        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 133, 20));
 
         jLabel1.setText("Producto :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
 
         jLabel3.setText("Cantidad :");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
-        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 133, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
+        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 100, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-comprar.png"))); // NOI18N
         jButton1.setText("Vender");
         jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,50 +95,53 @@ public class ventana extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
 
         jLabel4.setText("Total en ventas : $");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         totaltoto.setText("0");
-        getContentPane().add(totaltoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 114, -1));
+        getContentPane().add(totaltoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 114, -1));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-limpiar.png"))); // NOI18N
         jButton2.setText("Limpiar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
 
         jLabel6.setText("$");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 20, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 20, 20));
 
         jLabel7.setText("Valor a pagar : $");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         valortotal.setText("0");
-        getContentPane().add(valortotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 133, -1));
+        getContentPane().add(valortotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 133, -1));
 
         jLabel8.setText("Numero de ventas :");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, 20));
 
         canven.setText("0");
-        getContentPane().add(canven, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 150, 20));
+        getContentPane().add(canven, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 150, 20));
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/cliente.png"))); // NOI18N
         jButton4.setText("Registrar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 110, 20));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 110, 20));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-usuario.png"))); // NOI18N
         jLabel5.setText("Usuario :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 20));
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 130, 20));
 
-        Pro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sleccione un producto", "i3", "i5", "i7", "Monitor", "Mother board", "Mouse", "Teclado", "Parlantes" }));
+        Pro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un producto", "i3", "i5", "i7", "Monitor", "Mother board", "Mouse", "Teclado", "Parlantes" }));
         Pro.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 ProComponentHidden(evt);
@@ -143,18 +152,20 @@ public class ventana extends javax.swing.JFrame {
                 ProActionPerformed(evt);
             }
         });
-        getContentPane().add(Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 130, -1));
+        getContentPane().add(Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 130, 20));
 
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-carrito.png"))); // NOI18N
         jButton5.setText("Agregar al carrito");
+        jButton5.setEnabled(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         valor.setText("0");
-        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 120, 20));
+        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 120, 20));
 
         tbProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,7 +176,7 @@ public class ventana extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, true
+                false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -174,10 +185,10 @@ public class ventana extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbProductos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 540, 140));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 620, 140));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project_eae/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 530));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 470));
 
         jMenu2.setText("Inicio");
 
@@ -230,6 +241,8 @@ public class ventana extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         shell.vender();
+        valortotal.setText("0");
+        jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -275,8 +288,11 @@ public class ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_ProComponentHidden
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-        /*Agrega a la tabla*/
+        try {
+            if (Pro.getSelectedItem().toString().equals("Seleccione un producto")) {
+          JOptionPane.showMessageDialog(null, "Porfavor Seleccion un Producto");
+        } else {
+                /*Agrega a la tabla*/
         DefaultTableModel modelo;
         modelo = (DefaultTableModel)tbProductos.getModel();
         int cant = Integer.parseInt(canP.getText());
@@ -285,7 +301,7 @@ public class ventana extends javax.swing.JFrame {
         Object[] value = {Pro.getSelectedItem().toString(),valor.getText(),canP.getText(), subtot,cliente.getText(), user.getText()};
         modelo.addRow(value);
         tbProductos.setModel(modelo);
-
+        
         /* funcion para recorrer tabla */
         float suma = 0;
         for(int i = 0; i<modelo.getRowCount(); i++){
@@ -293,7 +309,12 @@ public class ventana extends javax.swing.JFrame {
         }                                         
         String S =String.valueOf(suma);
         valortotal.setText(S);
+        //Habilitra boton Vender 
+        jButton1.setEnabled(true);
+            }
         
+        } catch (Exception e) {
+        }
        
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -306,7 +327,7 @@ public class ventana extends javax.swing.JFrame {
     public static javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public static javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -330,5 +351,4 @@ public class ventana extends javax.swing.JFrame {
     public static javax.swing.JLabel valor;
     public static javax.swing.JLabel valortotal;
     // End of variables declaration//GEN-END:variables
-   
 }

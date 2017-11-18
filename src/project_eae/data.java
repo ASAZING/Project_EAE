@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author malcolmx
  */
 public class data {
-    ArrayList<String> cadena=new ArrayList(); //Almacena datos en cadena (String)
+    ArrayList<String> cadena=new ArrayList(); // Alamcena datos en cadena
     ArrayList<Float> total=new ArrayList(); // Alamcena Nuemors Flotantes
     
     public data (){
@@ -23,25 +23,7 @@ public class data {
     float val_produt=0,todo=0;
     int m=0;
     // Almacena los datos del usuario que va a iniciar sesion 
-     public void capture(){ 
-     cadena.add(user =login.usuario.getText()); // almecena el nombre del usaurio en el arrayList (String) 
-     cadena.add(pass=login.contra.getText()); //almacena la contraceña en el arrayList (String)
-         
-         if (pass.equals("holis123") && user.equals("malcolm")) {
-             ventana.user.setText(cadena.get(0));
-             ventana.jButton1.setEnabled(true);
-             JOptionPane.showMessageDialog(null, "Bienvenido "+ cadena.get(0)); // con cadena.get(0) optengo el primer dato
-             
-         } else {
-             login log=new login();
-             log.setVisible(true);
-             log.setTitle("Inicio de Sesion");
-             log.setLocationRelativeTo(null);
-             JOptionPane.showMessageDialog(null, "Error de Usuario"); // error de usario 
-         }
      
-
-     }
      public void clean (){   // Limpia los valores ya agregados  
      ventana.canP.setText("");  
      ventana.cliente.setText("");
