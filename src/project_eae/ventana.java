@@ -78,14 +78,14 @@ public class ventana extends javax.swing.JFrame {
                 clienteActionPerformed(evt);
             }
         });
-        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 133, 20));
+        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 133, 20));
 
         jLabel1.setText("Producto :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
 
         jLabel3.setText("Cantidad :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
-        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 100, -1));
+        getContentPane().add(canP, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 100, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-comprar.png"))); // NOI18N
         jButton1.setText("Vender");
@@ -113,7 +113,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
 
         jLabel6.setText("$");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 20, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 20, 20));
 
         jLabel7.setText("Valor a pagar : $");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
@@ -134,12 +134,12 @@ public class ventana extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 110, 20));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 130, 20));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-usuario.png"))); // NOI18N
         jLabel5.setText("Usuario :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 20));
-        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 130, 20));
+        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 130, 20));
 
         Pro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un producto", "i3", "i5", "i7", "Monitor", "Mother board", "Mouse", "Teclado", "Parlantes" }));
         Pro.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -152,7 +152,7 @@ public class ventana extends javax.swing.JFrame {
                 ProActionPerformed(evt);
             }
         });
-        getContentPane().add(Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 130, 20));
+        getContentPane().add(Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 130, 20));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon-carrito.png"))); // NOI18N
         jButton5.setText("Agregar al carrito");
@@ -165,7 +165,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         valor.setText("0");
-        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 120, 20));
+        getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 120, 20));
 
         tbProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,7 +188,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 620, 140));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 470));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 470));
 
         jMenu2.setText("Inicio");
 
@@ -306,8 +306,9 @@ public class ventana extends javax.swing.JFrame {
         float suma = 0;
         for(int i = 0; i<modelo.getRowCount(); i++){
             suma += (Float)modelo.getValueAt(i, 3); 
-        }                                         
-        String S =String.valueOf(suma);
+        } 
+        suma -= Float.parseFloat( totaltoto.getText()); // Resta el valor de la el total de ventas para 
+        String S =String.valueOf(suma);                 // Imprimer el valor de la sumatoria actual 
         valortotal.setText(S);
         //Habilitra boton Vender 
         jButton1.setEnabled(true);
