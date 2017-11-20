@@ -307,8 +307,8 @@ public class ventana extends javax.swing.JFrame {
         for(int i = 0; i<modelo.getRowCount(); i++){
             suma += (Float)modelo.getValueAt(i, 3); 
         } 
-        suma -= Float.parseFloat( totaltoto.getText()); // Resta el valor de la el total de ventas para 
-        String S =String.valueOf(suma);                 // Imprimer el valor de la sumatoria actual 
+        suma -= Float.parseFloat( totaltoto.getText()); // Resta el valor de el total de ventas para 
+        String S =String.valueOf(suma);                 // Imprimir el valor de la sumatoria actual 
         valortotal.setText(S);
         //Habilitra boton Vender 
         jButton1.setEnabled(true);
