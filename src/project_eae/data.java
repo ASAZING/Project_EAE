@@ -33,7 +33,6 @@ public class data {
      }
      // Captura  e Imprime ventas y numero de ventas
      public void vender (){         
-        ventana.Pro.getSelectedItem().toString();
          total.add(todo=Float.valueOf(ventana.valortotal.getText()));         
          float sumatoria=0;
          m++; // cada vez qeu use (vender) va incrementar el numeor de las ventas 1 en 1 
@@ -57,7 +56,7 @@ public class data {
            // Estos datos se envian a el servidor donde seguardan los datos de los cliente 
          }
      public void produc (){
-         ventana.Pro.getSelectedItem().toString();
+
          switch (ventana.Pro.getSelectedItem().toString()) {
              case "Monitor":
                  val_pro= String.valueOf("100000");
@@ -88,8 +87,8 @@ public class data {
          
      }
      
-     private void setValp(String val_pro){
-     ventana.valor.setText(val_pro);
+     private void setValp(String getval){
+     ventana.valor.setText(getval);
      
      }
 
