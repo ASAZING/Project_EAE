@@ -18,10 +18,10 @@ public class data {
     
     public data (){
 }
-    int can =0;
-    String user="",pass="";
-    float val_produt=0,todo=0;
-    int m=0;
+    int can =0,m=0;;
+    String user="",pass="",val_pro;
+    float todo=0;
+
     // Almacena los datos del usuario que va a iniciar sesion 
      
      public void clean (){   // Limpia los valores ya agregados  
@@ -33,33 +33,7 @@ public class data {
      }
      // Captura  e Imprime ventas y numero de ventas
      public void vender (){         
-         switch (ventana.Pro.getSelectedItem().toString()) {
-             case "Monitor":
-                 val_produt=100000;
-                 break;
-             case "i3":
-                 val_produt=500000;
-                 break;
-             case "i7":
-                 val_produt=1000000;
-                 break;
-             case "Mother Board":
-                 val_produt=700000;
-                 break;
-             case "Parlantes":
-                 val_produt=500000;
-                 break;
-             case "Mouse":
-                 val_produt=200000;
-                 break;
-             case "Teclado":
-                 val_produt=300000;
-                 break;
-             case "i5":
-                 val_produt=800000;
-                 break;
-               
-  }                     
+        ventana.Pro.getSelectedItem().toString();
          total.add(todo=Float.valueOf(ventana.valortotal.getText()));         
          float sumatoria=0;
          m++; // cada vez qeu use (vender) va incrementar el numeor de las ventas 1 en 1 
@@ -84,42 +58,39 @@ public class data {
          }
      public void produc (){
          ventana.Pro.getSelectedItem().toString();
-         String val_pro = "";
          switch (ventana.Pro.getSelectedItem().toString()) {
              case "Monitor":
                  val_pro= String.valueOf("100000");
-                 ventana.valor.setText(val_pro);
                  break;
              case "i3":
                  val_pro= String.valueOf("500000");
-                 ventana.valor.setText(val_pro);
                  break;
              case "i5":
                  val_pro= String.valueOf("800000");
-                 ventana.valor.setText(val_pro);
              case "i7":
                  val_pro= String.valueOf("1000000");
-                 ventana.valor.setText(val_pro);
                  break;
              case "Mother board":
                  val_pro= String.valueOf("700000");
-                 ventana.valor.setText(val_pro);
                  break;
              case "Parlantes":
                  val_pro= String.valueOf("500000");
-                 ventana.valor.setText(val_pro);
                  break;
              case "Mouse":
                  val_pro= String.valueOf("200000");
-                 ventana.valor.setText(val_pro);
                  break;
              case "Teclado":
                  val_pro= String.valueOf("300000");
-                 ventana.valor.setText(val_pro);
                  break;    
                
          }
+         setValp(val_pro);
          
+     }
+     
+     private void setValp(String val_pro){
+     ventana.valor.setText(val_pro);
+     
      }
 
 }
