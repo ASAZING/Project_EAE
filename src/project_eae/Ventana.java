@@ -1,32 +1,26 @@
 package project_eae;
+
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
-
-
 /**
  *
- * @author ASAZING 
+ * @author ASAZING
  */
-public class ventana extends javax.swing.JFrame {
-    public static data clear=new data();
-    public static data regi=new data(); 
-    public static data shell=new data ();
-    public static data regis=new data();
-    public static data pro=new data();
+public class Ventana extends javax.swing.JFrame {
 
+    public static Data dato = new Data();
 
     /**
      * Creates new form ventana
      */
-    public ventana() {
+    public Ventana() {
         initComponents();
-  
-           this.setIconImage(new ImageIcon(getClass().getResource("/resources/icono.png")).getImage());   
+        this.setIconImage(new ImageIcon(getClass().getResource("/resources/icono.png")).getImage());
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -240,17 +234,17 @@ public class ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        shell.vender();
+        dato.vender();
         valortotal.setText("0");
         jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    clear.clean();
+        dato.clean();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    regis.registrar();
+        dato.registrar();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
@@ -262,25 +256,25 @@ public class ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        login log=new login ();
+        Login log = new Login();
         log.setVisible(true);
         log.setTitle("Inicio de Sesion");
         log.setLocationRelativeTo(null);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-    helpme me=new helpme ();
-    me.setVisible(true);
-    me.setLocationRelativeTo(null);
-    me.setTitle("Ayuda");
+        Helpme me = new Helpme();
+        me.setVisible(true);
+        me.setLocationRelativeTo(null);
+        me.setTitle("Ayuda");
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-    System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void ProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProActionPerformed
-    pro.produc();
+        dato.produc();
     }//GEN-LAST:event_ProActionPerformed
 
     private void ProComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ProComponentHidden
@@ -290,33 +284,33 @@ public class ventana extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         try {
             if (Pro.getSelectedItem().toString().equals("Seleccione un producto")) {
-          JOptionPane.showMessageDialog(null, "Porfavor Seleccion un Producto");
-        } else {
+                JOptionPane.showMessageDialog(null, "Porfavor Seleccion un Producto");
+            } else {
                 /*Agrega a la tabla*/
-        DefaultTableModel modelo;
-        modelo = (DefaultTableModel)tbProductos.getModel();
-        int cant = Integer.parseInt(canP.getText());
-        float precio = Float.parseFloat(valor.getText());
-        float subtot = precio * cant ;
-        Object[] value = {Pro.getSelectedItem().toString(),valor.getText(),canP.getText(), subtot,cliente.getText(), user.getText()};
-        modelo.addRow(value);
-        tbProductos.setModel(modelo);
-        
-        /* funcion para recorrer tabla */
-        float suma = 0;
-        for(int i = 0; i<modelo.getRowCount(); i++){
-            suma += (Float)modelo.getValueAt(i, 3); 
-        } 
-        suma -= Float.parseFloat( totaltoto.getText()); // Resta el valor de el total de ventas para 
-        String S =String.valueOf(suma);                 // Imprimir el valor de la sumatoria actual 
-        valortotal.setText(S);
-        //Habilitra boton Vender 
-        jButton1.setEnabled(true);
+                DefaultTableModel modelo;
+                modelo = (DefaultTableModel) tbProductos.getModel();
+                int cant = Integer.parseInt(canP.getText());
+                float precio = Float.parseFloat(valor.getText());
+                float subtot = precio * cant;
+                Object[] value = {Pro.getSelectedItem().toString(), valor.getText(), canP.getText(), subtot, cliente.getText(), user.getText()};
+                modelo.addRow(value);
+                tbProductos.setModel(modelo);
+
+                /* funcion para recorrer tabla */
+                float suma = 0;
+                for (int i = 0; i < modelo.getRowCount(); i++) {
+                    suma += (Float) modelo.getValueAt(i, 3);
+                }
+                suma -= Float.parseFloat(totaltoto.getText()); // Resta el valor de el total de ventas para 
+                String S = String.valueOf(suma);                 // Imprimir el valor de la sumatoria actual 
+                valortotal.setText(S);
+                //Habilitra boton Vender 
+                jButton1.setEnabled(true);
             }
-        
+
         } catch (Exception e) {
         }
-       
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
 

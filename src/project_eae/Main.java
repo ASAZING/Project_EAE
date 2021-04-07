@@ -4,9 +4,9 @@ package project_eae;
  *
  * @author ASAZING
  */
-public class main {
+public class Main {
     public static void main(String[] args) {
-        ventana win=new ventana ();
+        Ventana win=new Ventana ();
         win.setVisible(true);
         win.setTitle("Cajero");
         win.setLocationRelativeTo(null);
