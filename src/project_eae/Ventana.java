@@ -1,5 +1,6 @@
 package project_eae;
 
+import java.awt.HeadlessException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -308,7 +309,8 @@ public class Ventana extends javax.swing.JFrame {
                 jButton1.setEnabled(true);
             }
 
-        } catch (Exception e) {
+        } catch (HeadlessException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error : " + e);
         }
 
     }//GEN-LAST:event_jButton5ActionPerformed

@@ -18,7 +18,7 @@ public class Helpme extends javax.swing.JFrame {
      */
     public Helpme() {
         initComponents();
-        this.setIconImage(new ImageIcon(getClass().getResource("/resources/ayuda.png")).getImage());  
+        this.setIconImage(new ImageIcon(getClass().getResource("/resources/ayuda.png")).getImage());
     }
 
     /**
@@ -150,7 +150,7 @@ public class Helpme extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-     
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

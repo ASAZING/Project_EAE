@@ -1,7 +1,10 @@
 package project_eae;
 
+import java.awt.HeadlessException;
+import java.util.Arrays;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 /**
  *
@@ -130,18 +133,25 @@ public class Login extends javax.swing.JFrame {
 
         setTitle("Inicio de sesion");
         try {
-            if (contra.getPassword().equals("holis123") && usuario.getText().equals("malcolm") || contra.getPassword().equals("holis123") && usuario.getText().equals("ASAZING")) {
+            if (validarContraseña(contra) && usuario.getText().equals("malcolm") || validarContraseña(contra) && usuario.getText().equals("ASAZING")) {
+
                 Ventana.user.setText(usuario.getText());
                 Ventana.jButton5.setEnabled(true);
                 JOptionPane.showMessageDialog(null, "Bienvenido " + usuario.getText());
                 setVisible(false);
             } else {
+                JOptionPane.showMessageDialog(null, contra.getPassword());
                 JOptionPane.showMessageDialog(null, "Error de Usuario"); // error al iniciar sesion 
             }
-        } catch (Exception e) {
+        } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, "Error : " + e);
 
         }
+    }
+
+    public Boolean validarContraseña(JPasswordField contraseña) {
+        return Arrays.equals(contraseña.getPassword(), new char[]{'p', 'a', 's', 's', 'w', 'o', 'r', 'd'});
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
